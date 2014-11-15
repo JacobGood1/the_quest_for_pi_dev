@@ -1,14 +1,13 @@
 library component;
 
+import '../client.dart' show canvas, stage;
+import '../../../shared/components/shared_component.dart';
+import 'dart:math';
 
-
-import '../client.dart' show canvas, stage, Point;
-
-part 'physics/vector.dart';
 
 double _stageBoundX = canvas.width.toDouble(),
        _stageBoundY = canvas.height.toDouble();
 
-abstract class ComponentData{
+abstract class ComponentData extends SharedComponentData{
 
 }

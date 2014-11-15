@@ -1,4 +1,4 @@
-part of component;
+part of shared_component;
 
 class Vector{
   double x,y;

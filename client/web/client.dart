@@ -1,6 +1,7 @@
 import 'dart:html';
 import 'package:stagexl/stagexl.dart';
 import '../../shared/globals.dart';
+import 'levels/level.dart';
 
 
 CanvasElement canvas = querySelector('#stage')..width = canvasWidth..height = canvasHeight;
@@ -8,13 +9,12 @@ Stage stage = new Stage(canvas);
 RenderLoop loop = new RenderLoop();
 GameLoop gameLoop = new GameLoop();
 
-var i = "it works";
 
 class GameLoop extends Animatable{
 
 
   bool advanceTime(num time) {
-    //place all timing code here!
+    currentLevel.updateSprites(time);
     return true;
   }
 }
@@ -41,8 +41,11 @@ class WebsocketSetup {
   }
 }
 
+Level currentLevel;
+
 main(){
   loop.addStage(stage);
   stage.juggler.add(gameLoop);
   new WebsocketSetup();
+  currentLevel = new Level1();
 }
