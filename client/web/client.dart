@@ -8,6 +8,7 @@ Stage stage = new Stage(canvas);
 RenderLoop loop = new RenderLoop();
 GameLoop gameLoop = new GameLoop();
 
+var i = "it works";
 
 class GameLoop extends Animatable{
 
