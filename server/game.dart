@@ -24,12 +24,17 @@ class ServerState{
   ServerState(){
     serverLoop.onUpdate = ((serverLoop) {
       // Update game logic here.
+      clientsConnected.forEach((c){
+        c['x'] = c['x'] += 0.1;
+      });
+
       reset += serverLoop.dt;
       if(reset >= SERVERTICK){
         reset = 0.0;
         //send all entity updates back to the client, this is authoritative
-        if(websocket != null){
-          serverEntities.forEach((entity) => websocket.add(JSON.encode({'hi': "hi there my name is marvin"})));
+        if(webSocket != null){
+          //print(JSON.encode(clientsConnected));
+          webSocket.add(JSON.encode(clientsConnected));
         }
       }
 

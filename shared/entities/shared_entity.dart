@@ -58,7 +58,7 @@ abstract class SharedEntity implements SharedEntityData{
       lookAtMe.invoke(componentCollisionCheckFunctionList[i], [time]);
     }
     //Finally, position the objects
-    print(x);
+    //print(x);
     this..x = position.x
         ..y = position.y;
   }

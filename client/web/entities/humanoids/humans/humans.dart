@@ -1,10 +1,8 @@
 part of entity;
 
-class BlackMage extends Entity with Movement{
+class BlackMage extends Entity with PlayerMovement, Movement, InputManager{
 
   BlackMage(x,y):super('black_mage',x,y) {
-    movementSpeed = 10.0;
-    moveRight();
-    print(velocity.x);
+    movementSpeed = 100.0;
   }
 }

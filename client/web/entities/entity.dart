@@ -3,11 +3,11 @@ library entity;
 import 'package:stagexl/stagexl.dart' show Sprite, Bitmap;
 import '../levels/level.dart' show resourceManager;
 import '../../../shared/components/shared_component.dart';
-import 'dart:mirrors';
 import '../../../shared/entities/shared_entity.dart';
+import '../components/component.dart';
 
+import 'dart:mirrors';
 part 'humanoids/humans/humans.dart';
-
 
 List<Entity> entityManager = [];
 
